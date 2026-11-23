@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Website</title>
+
+<link rel="stylesheet" href="style.css">
+</head><header class="topbar">
+<a href="#" class="logo">ЛАВКА<span>.</span></a>
+<nav>
+<a href="#home">Начало</a>
+<a href="#menu">Меню</a>
+<a href="#about">За нас</a>
+</nav>
+<button class="cart-button" onclick="toggleCart()">
+🛒 Количка <span id="cart-count">0</span>
+</button>
+</header>
+
+<section class="hero" id="home">
+<div class="hero-content">
+<p class="eyebrow">ВКУСНО • БЪРЗО • ЛЕСНО</p>
+<h1>Гладен ли си?<br><span>Ние сме насреща!</span></h1>
+<p>Любимата ти храна е само на няколко клика разстояние.</p>
+<a href="#menu" class="main-button">Разгледай менюто</a>
+</div>
+<div class="hero-image">🍔</div>
+</section>
+
+<main>
+<section class="menu-section" id="menu">
+<div class="section-heading">
+<p class="eyebrow">НАШИТЕ ПРЕДЛОЖЕНИЯ</p>
+<h2>Избери нещо вкусно</h2>
+<p>Открий любимата си храна от нашето меню.</p>
+</div>
+
+<input type="text" id="search" class="search"
+placeholder="🔎 Потърси храна...">
+
+<div class="categories" id="categories">
+<button class="category active" data-category="Всички">Всички</button>
+<button class="category" data-category="Бургери">🍔 Бургери</button>
+<button class="category" data-category="Пици">🍕 Пици</button>
+<button class="category" data-category="Сандвичи">🥪 Сандвичи</button>
+<button class="category" data-category="Картофки">🍟 Картофки</button>
+<button class="category" data-category="Напитки">🥤 Напитки</button>
+<button class="category" data-category="Десерти">🍰 Десерти</button>
+</div>
+
+<div class="products" id="products"></div>
+</section>
+
+<section class="about" id="about">
+<div>
+<p class="eyebrow">ЗА ЛАВКА</p>
+<h2>Добрата храна<br>събира всички!</h2>
+<p>Подбрахме вкусни предложения за всеки момент от деня.
+Избери, поръчай и се наслади!</p>
+</div>
+<div class="about-icon">🍕</div>
+</section>
+</main>
+
+<aside class="cart-panel" id="cart-panel">
+<div class="cart-header">
+<h2>Твоята количка</h2>
+<button class="close-cart" onclick="toggleCart()">✕</button>
+</div>
+
+<div id="cart-items" class="cart-items">
+<p class="empty">Количката е празна.</p>
+</div>
+
+<div class="cart-bottom">
+<div class="total">
+<span>Общо:</span>
+<strong id="total">0.00 €</strong>
+</div>
+<button class="main-button checkout-button" onclick="showCheckout()">
+Продължи към поръчка
+</button>
+</div>
+</aside>
+
+<div class="overlay" id="overlay" onclick="toggleCart()"></div>
+
+<section class="checkout" id="checkout">
+<div class="checkout-box">
+<button class="close-checkout" onclick="hideCheckout()">✕</button>
+<p class="eyebrow">ПОСЛЕДНА СТЪПКА</p>
+<h2>Завърши поръчката</h2>
+
+<form id="order-form">
+<label>Твоето име</label>
+<input type="text" id="customer-name"
+placeholder="Въведи име" required>
+
+<label>Телефон</label>
+<input type="tel" id="customer-phone"
+placeholder="Телефонен номер" required>
+
+<label>Начин на получаване</label>
+<select id="delivery-type">
+<option value="Доставка">Доставка</option>
+<option value="Вземане от място">Вземане от място</option>
+</select>
+
+<div id="address-field">
+<label>Адрес за доставка</label>
+<input type="text" id="customer-address"
+placeholder="Въведи адрес">
+</div>
+
+<div class="order-total">
+Общо за плащане:
+<strong id="checkout-total">0.00 €</strong>
+</div>
+
+<button type="submit" class="main-button submit-button">
+Потвърди поръчката
+</button>
+</form>
+</div>
+</section>
+
+<footer>
+<a href="#" class="logo">ЛАВКА<span>.</span></a>
+<p>Вкусна храна • Бързо обслужване • Лесно поръчване</p>
+<small>© 2026 Лавка. Всички права запазени.</small>
+</footer>
